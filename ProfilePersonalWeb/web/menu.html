@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <title>Main Menu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e3e6ec 0%, #f3f5f8 100%);
+            color: #2c3038;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+       
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            width: 100%;
+            max-width: 550px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1a1d24;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .text-muted {
+            color: #656d7d;
+            font-size: 1.05rem;
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        
+        .button-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        
+        .custom-btn {
+            padding: 15px 25px;
+            border: unset;
+            border-radius: 14px;
+            color: #212121;
+            z-index: 1;
+            background: rgba(240, 242, 245, 0.9);
+            position: relative;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 250ms ease;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .custom-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 14px;
+            z-index: -1;
+            transition: all 250ms ease;
+        }
+
+        .custom-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .custom-btn:hover::before {
+            width: 100%;
+        }
+
+        
+        .btn-dark::before {
+            background-color: #1a1d24;
+        }
+        .btn-dark:hover {
+            color: #ffffff;
+            border-color: #1a1d24;
+        }
+
+        
+        .btn-blue::before {
+            background-color: #4f5a70;
+        }
+        .btn-blue:hover {
+            color: #ffffff;
+            border-color: #4f5a70;
+        }
+
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="card">
+            <h1>Main Menu</h1>
+            <p class="text-muted">Welcome to the Student Profile Management System</p>
+            
+            <div class="button-stack">
+                <a href="index.html" class="custom-btn btn-blue">
+                    Register New Profile
+                </a>
+                
+                <a href="ProfileServlet?action=view" class="custom-btn btn-dark">
+                    View Registered Profile
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+```
